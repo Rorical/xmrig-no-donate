@@ -1,0 +1,7 @@
+﻿  Building Custom Rule E:/Downloads/xmrig-master/src/3rdparty/libethash/CMakeLists.txt
+  ethash_internal.c
+E:\Downloads\xmrig-master\src\3rdparty\libethash\ethash_internal.c(157,18): warning C4244: “return”: 从“uint64_t”转换到“uint32_t”，可能丢失数据
+E:\Downloads\xmrig-master\src\3rdparty\libethash\ethash_internal.c(156,1): warning C4244: “初始化”: 从“uint64_t”转换到“const uint32_t”，可能丢失数据
+E:\Downloads\xmrig-master\src\3rdparty\libethash\ethash_internal.c(205,4): warning C4133: “函数”: 从“const node *”到“const char *”的类型不兼容
+  keccakf800.c
+  ethash.vcxproj -> E:\Downloads\xmrig-master\build\src\3rdparty\libethash\Release\ethash.lib

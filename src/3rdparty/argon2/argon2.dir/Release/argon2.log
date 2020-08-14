@@ -1,0 +1,9 @@
+﻿  Building Custom Rule E:/Downloads/xmrig-master/src/3rdparty/argon2/CMakeLists.txt
+  argon2.c
+  core.c
+  encoding.c
+  genkat.c
+  impl-select.c
+  blake2.c
+  argon2-arch.c
+  argon2.vcxproj -> E:\Downloads\xmrig-master\build\src\3rdparty\argon2\Release\argon2.lib

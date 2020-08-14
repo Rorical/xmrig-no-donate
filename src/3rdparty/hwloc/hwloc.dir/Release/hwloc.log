@@ -1,0 +1,21 @@
+﻿  Building Custom Rule E:/Downloads/xmrig-master/src/3rdparty/hwloc/CMakeLists.txt
+  base64.c
+  bind.c
+  bitmap.c
+  components.c
+  diff.c
+  distances.c
+  misc.c
+  pci-common.c
+  shmem.c
+  topology.c
+  topology-noos.c
+  topology-synthetic.c
+  topology-windows.c
+  topology-x86.c
+  topology-xml.c
+E:\Downloads\xmrig-master\src\3rdparty\hwloc\src\topology-xml.c(245,43): warning C4244: “=”: 从“unsigned long”转换到“unsigned char”，可能丢失数据
+  topology-xml-nolibxml.c
+  traversal.c
+  正在生成代码...
+  hwloc.vcxproj -> E:\Downloads\xmrig-master\build\src\3rdparty\hwloc\Release\hwloc.lib

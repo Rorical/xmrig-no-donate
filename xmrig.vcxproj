@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E9C441C8-39D2-33C9-916F-48E974A42154}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>xmrig</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Downloads\xmrig-master\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xmrig.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xmrig</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Downloads\xmrig-master\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xmrig.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xmrig</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\Downloads\xmrig-master\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">xmrig.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">xmrig</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\Downloads\xmrig-master\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">xmrig.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">xmrig</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="Debug";;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(IncludePaths)</IncludePaths>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different E:/Downloads/xmrig-master/bin/WinRing0/WinRing0x64.sys E:/Downloads/xmrig-master/build/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>Debug\xmrig-asm.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libssl.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libcrypto.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libuv.lib;ws2_32.lib;psapi.lib;iphlpapi.lib;userenv.lib;crypt32.lib;src\3rdparty\hwloc\Debug\hwloc.lib;src\3rdparty\argon2\Debug\argon2.lib;src\3rdparty\libethash\Debug\ethash.lib;src\3rdparty\argon2\Debug\argon2-sse2.lib;src\3rdparty\argon2\Debug\argon2-ssse3.lib;src\3rdparty\argon2\Debug\argon2-xop.lib;src\3rdparty\argon2\Debug\argon2-avx2.lib;src\3rdparty\argon2\Debug\argon2-avx512f.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Downloads/xmrig-master/build/Debug/xmrig.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Downloads/xmrig-master/build/Debug/xmrig.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="Release";;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(IncludePaths)</IncludePaths>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different E:/Downloads/xmrig-master/bin/WinRing0/WinRing0x64.sys E:/Downloads/xmrig-master/build/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>Release\xmrig-asm.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libssl.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libcrypto.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libuv.lib;ws2_32.lib;psapi.lib;iphlpapi.lib;userenv.lib;crypt32.lib;src\3rdparty\hwloc\Release\hwloc.lib;src\3rdparty\argon2\Release\argon2.lib;src\3rdparty\libethash\Release\ethash.lib;src\3rdparty\argon2\Release\argon2-sse2.lib;src\3rdparty\argon2\Release\argon2-ssse3.lib;src\3rdparty\argon2\Release\argon2-xop.lib;src\3rdparty\argon2\Release\argon2-avx2.lib;src\3rdparty\argon2\Release\argon2-avx512f.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Downloads/xmrig-master/build/Release/xmrig.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Downloads/xmrig-master/build/Release/xmrig.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="MinSizeRel";;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(IncludePaths)</IncludePaths>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different E:/Downloads/xmrig-master/bin/WinRing0/WinRing0x64.sys E:/Downloads/xmrig-master/build/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>MinSizeRel\xmrig-asm.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libssl.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libcrypto.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libuv.lib;ws2_32.lib;psapi.lib;iphlpapi.lib;userenv.lib;crypt32.lib;src\3rdparty\hwloc\MinSizeRel\hwloc.lib;src\3rdparty\argon2\MinSizeRel\argon2.lib;src\3rdparty\libethash\MinSizeRel\ethash.lib;src\3rdparty\argon2\MinSizeRel\argon2-sse2.lib;src\3rdparty\argon2\MinSizeRel\argon2-ssse3.lib;src\3rdparty\argon2\MinSizeRel\argon2-xop.lib;src\3rdparty\argon2\MinSizeRel\argon2-avx2.lib;src\3rdparty\argon2\MinSizeRel\argon2-avx512f.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Downloads/xmrig-master/build/MinSizeRel/xmrig.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Downloads/xmrig-master/build/MinSizeRel/xmrig.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <MASM>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;RAPIDJSON_SSE2;XMRIG_OS_WIN;XMRIG_FEATURE_HTTP;XMRIG_FEATURE_API;XMRIG_FEATURE_ENV;XMRIG_FEATURE_HWLOC;CL_TARGET_OPENCL_VERSION=200;CL_USE_DEPRECATED_OPENCL_1_2_APIS;XMRIG_FEATURE_OPENCL;XMRIG_STRICT_OPENCL_CACHE;XMRIG_FEATURE_ADL;XMRIG_FEATURE_CUDA;XMRIG_FEATURE_NVML;XMRIG_MINER_PROJECT;__STDC_FORMAT_MACROS;UNICODE;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;HAVE_ROTR;XMRIG_ALGO_RANDOMX;XMRIG_FEATURE_MSR;XMRIG_FIX_RYZEN;XMRIG_ALGO_ARGON2;XMRIG_ALGO_ASTROBWT;ASTROBWT_AVX2;XMRIG_ALGO_KAWPOW;XMRIG_FEATURE_TLS;XMRIG_FEATURE_ASM;XMRIG_ALGO_CN_LITE;XMRIG_ALGO_CN_HEAVY;XMRIG_ALGO_CN_PICO;CMAKE_INTDIR="RelWithDebInfo";;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <IncludePaths>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(IncludePaths)</IncludePaths>
+    </MASM>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\Downloads\xmrig-master\src\3rdparty\hwloc\include;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\include;E:\Downloads\xmrig-master\src;E:\Downloads\xmrig-master\src\3rdparty;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -E copy_if_different E:/Downloads/xmrig-master/bin/WinRing0/WinRing0x64.sys E:/Downloads/xmrig-master/build/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>RelWithDebInfo\xmrig-asm.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libssl.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libcrypto.lib;E:\Downloads\xmrig-deps-4.1\msvc2019\x64\lib\libuv.lib;ws2_32.lib;psapi.lib;iphlpapi.lib;userenv.lib;crypt32.lib;src\3rdparty\hwloc\RelWithDebInfo\hwloc.lib;src\3rdparty\argon2\RelWithDebInfo\argon2.lib;src\3rdparty\libethash\RelWithDebInfo\ethash.lib;src\3rdparty\argon2\RelWithDebInfo\argon2-sse2.lib;src\3rdparty\argon2\RelWithDebInfo\argon2-ssse3.lib;src\3rdparty\argon2\RelWithDebInfo\argon2-xop.lib;src\3rdparty\argon2\RelWithDebInfo\argon2-avx2.lib;src\3rdparty\argon2\RelWithDebInfo\argon2-avx512f.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/Downloads/xmrig-master/build/RelWithDebInfo/xmrig.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/Downloads/xmrig-master/build/RelWithDebInfo/xmrig.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Downloads\xmrig-master\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/Downloads/xmrig-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/Downloads/xmrig-master -BE:/Downloads/xmrig-master/build --check-stamp-file E:/Downloads/xmrig-master/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASM_MASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompilerABI.c;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCompilerIdDetection.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompileFeatures.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerABI.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerId.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeFindBinUtils.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystem.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCompilerCommon.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckIncludeFile.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckSymbolExists.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CompilerId\VS-10.vcxproj.in;D:\Program Files\CMake\share\cmake-3.16\Modules\FindOpenSSL.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Internal\FeatureTesting.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-Determine-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\SelectLibraryConfigurations.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeASM_MASMCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeSystem.cmake;E:\Downloads\xmrig-master\cmake\FindUV.cmake;E:\Downloads\xmrig-master\cmake\OpenSSL.cmake;E:\Downloads\xmrig-master\cmake\argon2.cmake;E:\Downloads\xmrig-master\cmake\asm.cmake;E:\Downloads\xmrig-master\cmake\astrobwt.cmake;E:\Downloads\xmrig-master\cmake\cpu.cmake;E:\Downloads\xmrig-master\cmake\flags.cmake;E:\Downloads\xmrig-master\cmake\kawpow.cmake;E:\Downloads\xmrig-master\cmake\os.cmake;E:\Downloads\xmrig-master\cmake\randomx.cmake;E:\Downloads\xmrig-master\src\backend\backend.cmake;E:\Downloads\xmrig-master\src\backend\common\common.cmake;E:\Downloads\xmrig-master\src\backend\cpu\cpu.cmake;E:\Downloads\xmrig-master\src\backend\cuda\cuda.cmake;E:\Downloads\xmrig-master\src\backend\opencl\opencl.cmake;E:\Downloads\xmrig-master\src\base\base.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Downloads\xmrig-master\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/Downloads/xmrig-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/Downloads/xmrig-master -BE:/Downloads/xmrig-master/build --check-stamp-file E:/Downloads/xmrig-master/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASM_MASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompilerABI.c;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCompilerIdDetection.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompileFeatures.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerABI.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerId.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeFindBinUtils.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystem.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCompilerCommon.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckIncludeFile.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckSymbolExists.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CompilerId\VS-10.vcxproj.in;D:\Program Files\CMake\share\cmake-3.16\Modules\FindOpenSSL.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Internal\FeatureTesting.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-Determine-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\SelectLibraryConfigurations.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeASM_MASMCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeSystem.cmake;E:\Downloads\xmrig-master\cmake\FindUV.cmake;E:\Downloads\xmrig-master\cmake\OpenSSL.cmake;E:\Downloads\xmrig-master\cmake\argon2.cmake;E:\Downloads\xmrig-master\cmake\asm.cmake;E:\Downloads\xmrig-master\cmake\astrobwt.cmake;E:\Downloads\xmrig-master\cmake\cpu.cmake;E:\Downloads\xmrig-master\cmake\flags.cmake;E:\Downloads\xmrig-master\cmake\kawpow.cmake;E:\Downloads\xmrig-master\cmake\os.cmake;E:\Downloads\xmrig-master\cmake\randomx.cmake;E:\Downloads\xmrig-master\src\backend\backend.cmake;E:\Downloads\xmrig-master\src\backend\common\common.cmake;E:\Downloads\xmrig-master\src\backend\cpu\cpu.cmake;E:\Downloads\xmrig-master\src\backend\cuda\cuda.cmake;E:\Downloads\xmrig-master\src\backend\opencl\opencl.cmake;E:\Downloads\xmrig-master\src\base\base.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\Downloads\xmrig-master\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/Downloads/xmrig-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/Downloads/xmrig-master -BE:/Downloads/xmrig-master/build --check-stamp-file E:/Downloads/xmrig-master/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASM_MASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompilerABI.c;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCompilerIdDetection.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompileFeatures.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerABI.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerId.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeFindBinUtils.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystem.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCompilerCommon.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckIncludeFile.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckSymbolExists.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CompilerId\VS-10.vcxproj.in;D:\Program Files\CMake\share\cmake-3.16\Modules\FindOpenSSL.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Internal\FeatureTesting.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-Determine-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\SelectLibraryConfigurations.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeASM_MASMCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeSystem.cmake;E:\Downloads\xmrig-master\cmake\FindUV.cmake;E:\Downloads\xmrig-master\cmake\OpenSSL.cmake;E:\Downloads\xmrig-master\cmake\argon2.cmake;E:\Downloads\xmrig-master\cmake\asm.cmake;E:\Downloads\xmrig-master\cmake\astrobwt.cmake;E:\Downloads\xmrig-master\cmake\cpu.cmake;E:\Downloads\xmrig-master\cmake\flags.cmake;E:\Downloads\xmrig-master\cmake\kawpow.cmake;E:\Downloads\xmrig-master\cmake\os.cmake;E:\Downloads\xmrig-master\cmake\randomx.cmake;E:\Downloads\xmrig-master\src\backend\backend.cmake;E:\Downloads\xmrig-master\src\backend\common\common.cmake;E:\Downloads\xmrig-master\src\backend\cpu\cpu.cmake;E:\Downloads\xmrig-master\src\backend\cuda\cuda.cmake;E:\Downloads\xmrig-master\src\backend\opencl\opencl.cmake;E:\Downloads\xmrig-master\src\base\base.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\Downloads\xmrig-master\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/Downloads/xmrig-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/Downloads/xmrig-master -BE:/Downloads/xmrig-master/build --check-stamp-file E:/Downloads/xmrig-master/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeASM_MASMInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCCompilerABI.c;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXCompilerABI.cpp;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCXXInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeCompilerIdDetection.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompileFeatures.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerABI.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineCompilerId.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeDetermineSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeFindBinUtils.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeGenericSystem.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeInitializeConfigs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeLanguageInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCCompiler.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeRCInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystem.cmake.in;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestASM_MASMCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCXXCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestCompilerCommon.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CMakeTestRCCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckIncludeFile.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CheckSymbolExists.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\CompilerId\VS-10.vcxproj.in;D:\Program Files\CMake\share\cmake-3.16\Modules\FindOpenSSL.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\FindPackageMessage.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Internal\FeatureTesting.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-Determine-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows-MSVC.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\Windows.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\Platform\WindowsPaths.cmake;D:\Program Files\CMake\share\cmake-3.16\Modules\SelectLibraryConfigurations.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeASM_MASMCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeCXXCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeRCCompiler.cmake;E:\Downloads\xmrig-master\build\CMakeFiles\3.16.4\CMakeSystem.cmake;E:\Downloads\xmrig-master\cmake\FindUV.cmake;E:\Downloads\xmrig-master\cmake\OpenSSL.cmake;E:\Downloads\xmrig-master\cmake\argon2.cmake;E:\Downloads\xmrig-master\cmake\asm.cmake;E:\Downloads\xmrig-master\cmake\astrobwt.cmake;E:\Downloads\xmrig-master\cmake\cpu.cmake;E:\Downloads\xmrig-master\cmake\flags.cmake;E:\Downloads\xmrig-master\cmake\kawpow.cmake;E:\Downloads\xmrig-master\cmake\os.cmake;E:\Downloads\xmrig-master\cmake\randomx.cmake;E:\Downloads\xmrig-master\src\backend\backend.cmake;E:\Downloads\xmrig-master\src\backend\common\common.cmake;E:\Downloads\xmrig-master\src\backend\cpu\cpu.cmake;E:\Downloads\xmrig-master\src\backend\cuda\cuda.cmake;E:\Downloads\xmrig-master\src\backend\opencl\opencl.cmake;E:\Downloads\xmrig-master\src\base\base.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\Downloads\xmrig-master\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\api\interfaces\IApiListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\crypto\Algorithm.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\crypto\Coin.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\crypto\keccak.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\crypto\sha3.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\Console.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\Env.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\json\Json.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\json\JsonChain.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\json\JsonRequest.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\log\backends\ConsoleLog.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\log\backends\FileLog.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\log\FileLogWriter.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\log\Log.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\log\Tags.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\Signals.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\io\Watcher.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\Base.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\config\BaseConfig.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\config\BaseTransform.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\config\Title.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\Entry.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IBaseListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IClientListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IConfig.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IConfigListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IConfigTransform.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IConsoleListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IDnsListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\ILineListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\ILogBackend.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\ISignalListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IStrategy.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IStrategyListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\ITimerListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IWatcherListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\Platform.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\Process.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\dns\Dns.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\dns\DnsRecord.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\Http.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\HttpListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\BaseClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Client.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Job.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\NetworkState.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Pool.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Pools.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\ProxyUrl.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Socks5.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\strategies\FailoverStrategy.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\strategies\SinglePoolStrategy.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\strategies\StrategyProxy.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\SubmitResult.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Url.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tools\LineReader.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tools\MemPool.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tools\NetBuffer.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tools\Storage.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\Arguments.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\Baton.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\Buffer.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\Chrono.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\Handle.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\String.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\tools\Timer.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\AutoClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\EthStratumClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\3rdparty\http-parser\http_parser.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\api\Api.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\api\Httpd.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\api\interfaces\IApiRequest.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\api\requests\ApiRequest.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\api\requests\HttpApiRequest.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IHttpListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\IJsonReader.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\kernel\interfaces\ITcpServerListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\Fetch.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\HttpApiResponse.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\HttpClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\HttpContext.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\HttpData.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\http\HttpResponse.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\DaemonClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\SelfSelectClient.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tools\TcpServer.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\Hashrate.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\Tags.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\interfaces\IBackend.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\interfaces\IRxListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\interfaces\IRxStorage.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\interfaces\IWorker.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\misc\PciTopology.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\Thread.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\Threads.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\Worker.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\WorkerJob.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\Workers.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\Cpu.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuBackend.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuConfig.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuConfig_gen.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuLaunchData.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuThread.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuThreads.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuWorker.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\interfaces\ICpuInfo.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\cl\OclSource.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\interfaces\IOclRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\Cn0Kernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\Cn1Kernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\Cn2Kernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\CnBranchKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclBackend.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclCache.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclConfig.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclConfig_gen.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclGenerator.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclLaunchData.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclThread.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclThreads.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\OclWorker.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclBaseRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclCnRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclCnR.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclSharedData.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclSharedState.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclContext.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclDevice.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclError.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclLib.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclPlatform.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclVendor.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\Blake2bHashRegistersKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\Blake2bInitialHashKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\ExecuteVmKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\FillAesKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\FindSharesKernel.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\HashAesKernel.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\InitVmKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\RxJitKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\RxRunKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclRxBaseRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclRxJitRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclRxVmRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_FilterKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_FindSharesKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_MainKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_PrepareBatch2Kernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_Salsa20Kernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_SHA3InitialKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_SHA3Kernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclAstroBWTRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\kawpow\KawPow_CalculateDAGKernel.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclKawPowRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclKawPow.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\AdlHealth.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\AdlLib.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaBackend.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaConfig_gen.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaConfig.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaLaunchData.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaThread.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaThreads.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaWorker.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\interfaces\ICudaRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaBaseRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaCnRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\CudaDevice.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\CudaLib.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\nvml_lite.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\NvmlHealth.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\NvmlLib.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaRxRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaAstroBWTRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaKawPowRunner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\App.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\config\Config_default.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\config\Config_platform.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\config\Config.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\config\ConfigTransform.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\config\usage.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\Controller.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\core\Miner.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\net\interfaces\IJobResultListener.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\net\JobResult.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\net\JobResults.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\net\Network.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\net\strategies\DonateStrategy.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\Summary.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\version.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\crypto\Algorithm.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\crypto\Coin.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\crypto\keccak.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\crypto\sha3.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\Console.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\Env.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\json\Json.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\json\JsonChain.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\json\JsonRequest.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\log\backends\ConsoleLog.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\log\backends\FileLog.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\log\FileLogWriter.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\log\Log.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\log\Tags.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\Signals.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\Watcher.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\Base.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\config\BaseConfig.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\config\BaseTransform.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\config\Title.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\Entry.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\Platform.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\Process.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\dns\Dns.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\dns\DnsRecord.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\Http.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\BaseClient.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Client.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Job.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\NetworkState.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Pool.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Pools.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\ProxyUrl.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Socks5.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\strategies\FailoverStrategy.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\strategies\SinglePoolStrategy.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Url.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tools\LineReader.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tools\NetBuffer.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\tools\Arguments.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\tools\Buffer.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\tools\String.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\tools\Timer.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\AutoClient.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\EthStratumClient.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\3rdparty\http-parser\http_parser.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\api\Api.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\api\Httpd.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\api\requests\ApiRequest.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\api\requests\HttpApiRequest.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\Fetch.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\HttpApiResponse.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\HttpClient.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\HttpContext.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\HttpData.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\HttpListener.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\http\HttpResponse.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\DaemonClient.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\SelfSelectClient.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tools\TcpServer.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\common\Hashrate.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\common\Threads.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\common\Worker.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\common\Workers.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\Cpu.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuBackend.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuConfig.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuLaunchData.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuThread.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuThreads.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\CpuWorker.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\cl\OclSource.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\generators\ocl_generic_cn_generator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\generators\ocl_vega_cn_generator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\Cn0Kernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\Cn1Kernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\Cn2Kernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\CnBranchKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclBackend.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclCache.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclConfig.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclLaunchData.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclThread.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclThreads.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclWorker.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclBaseRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclCnRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclCnR.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclSharedData.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclSharedState.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclContext.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclDevice.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclError.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclLib.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\OclPlatform.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\OclCache_win.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\generators\ocl_generic_rx_generator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\Blake2bHashRegistersKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\Blake2bInitialHashKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\ExecuteVmKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\FillAesKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\FindSharesKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\InitVmKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\RxJitKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\rx\RxRunKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclRxBaseRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclRxJitRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclRxVmRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\generators\ocl_generic_astrobwt_generator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_FilterKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_FindSharesKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_MainKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_PrepareBatch2Kernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_Salsa20Kernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_SHA3InitialKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\astrobwt\AstroBWT_SHA3Kernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclAstroBWTRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\generators\ocl_generic_kawpow_generator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\kernels\kawpow\KawPow_CalculateDAGKernel.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\OclKawPowRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\runners\tools\OclKawPow.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\opencl\wrappers\AdlLib.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaBackend.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaConfig.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaLaunchData.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaThread.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaThreads.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\CudaWorker.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaBaseRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaCnRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\CudaDevice.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\CudaLib.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\wrappers\NvmlLib.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaRxRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaAstroBWTRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cuda\runners\CudaKawPowRunner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\App.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\core\config\Config.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\core\config\ConfigTransform.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\core\Controller.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\core\Miner.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\net\JobResults.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\net\Network.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\net\strategies\DonateStrategy.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\Summary.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\xmrig.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\io\json\Json_win.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\Platform_win.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\kernel\Platform_hwloc.cpp" />
+    <ResourceCompile Include="E:\Downloads\xmrig-master\res\app.rc" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\App_win.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\VirtualMemory_win.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\platform\BasicCpuInfo.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\platform\HwlocCpuInfo.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\cpu\platform\HwlocCpuInfo.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\backend\cpu\platform\BasicCpuInfo.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\backend\common\interfaces\IMemoryPool.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\asm\CryptonightR_template.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\c_blake256.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\c_groestl.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\c_jh.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\c_skein.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CnAlgo.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CnCtx.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CnHash.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CryptoNight_monero.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CryptoNight_test.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CryptoNight.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\groestl_tables.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\hash.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\skein_port.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\soft_aes.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\HugePagesInfo.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\MemoryPool.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\Nonce.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\portable\mm_malloc.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\VirtualMemory.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\cn\CryptoNight_x86.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\NUMAMemoryPool.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\Rx.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxAlgo.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxBasicStorage.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxCache.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxConfig.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxDataset.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxQueue.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxSeed.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxVm.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\RxNUMAStorage.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\rx\msr\MsrItem.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\argon2\Hash.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\argon2\Impl.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\astrobwt\AstroBWT.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\astrobwt\Salsa20.hpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\kawpow\KPCache.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\kawpow\KPHash.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\c_blake256.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\c_groestl.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\c_jh.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\c_skein.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\CnCtx.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\CnHash.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\HugePagesInfo.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\MemoryPool.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\Nonce.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\VirtualMemory.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\NUMAMemoryPool.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\VirtualMemory_hwloc.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\aes_hash.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\allocator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\blake2_generator.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\blake2\blake2b.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\bytecode_machine.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\dataset.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\instructions_portable.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\randomx.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\reciprocal.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\soft_aes.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\superscalar.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\virtual_machine.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\virtual_memory.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\vm_compiled_light.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\vm_compiled.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\vm_interpreted_light.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\vm_interpreted.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\Rx.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxAlgo.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxBasicStorage.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxCache.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxConfig.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxDataset.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxQueue.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxVm.cpp" />
+    <MASM Include="E:\Downloads\xmrig-master\src\crypto\randomx\jit_compiler_x86_static.asm" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\randomx\jit_compiler_x86.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\RxNUMAStorage.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\Rx_win.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\rx\msr\MsrItem.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\argon2\Impl.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\astrobwt\AstroBWT.cpp" />
+    <MASM Include="E:\Downloads\xmrig-master\src\crypto\astrobwt\sha3_256_avx2.asm" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\astrobwt\Salsa20.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\kawpow\KPCache.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\kawpow\KPHash.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\stratum\Tls.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\stratum\Tls.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tls\ServerTls.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tls\ServerTls.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tls\TlsConfig.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tls\TlsConfig.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tls\TlsContext.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tls\TlsContext.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\tls\TlsGen.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\tls\TlsGen.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\https\HttpsClient.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\https\HttpsClient.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\https\HttpsContext.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\https\HttpsContext.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\base\net\https\HttpsServer.cpp" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\base\net\https\HttpsServer.h" />
+    <ClInclude Include="E:\Downloads\xmrig-master\src\crypto\common\Assembly.h" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\common\Assembly.cpp" />
+    <ClCompile Include="E:\Downloads\xmrig-master\src\crypto\cn\r\CryptonightR_gen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\ZERO_CHECK.vcxproj">
+      <Project>{7FC13689-195B-3BE0-B40D-8E5804B73636}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\argon2\argon2.vcxproj">
+      <Project>{C811F79A-2B50-3F00-9C5E-B7D871BE4A70}</Project>
+      <Name>argon2</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\argon2\argon2-avx2.vcxproj">
+      <Project>{BCFE92CA-7292-3EB4-A1A6-E7127CA2E42A}</Project>
+      <Name>argon2-avx2</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\argon2\argon2-avx512f.vcxproj">
+      <Project>{2487B7EE-5775-3646-AFF5-BD173633ED70}</Project>
+      <Name>argon2-avx512f</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\argon2\argon2-sse2.vcxproj">
+      <Project>{4119EA8A-69C5-333E-A855-603760D70A0B}</Project>
+      <Name>argon2-sse2</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\argon2\argon2-ssse3.vcxproj">
+      <Project>{6A4A450E-F338-3B78-A7EF-54D7CBC8F361}</Project>
+      <Name>argon2-ssse3</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\argon2\argon2-xop.vcxproj">
+      <Project>{87FD1263-E235-3E25-8BCC-C80193C566EE}</Project>
+      <Name>argon2-xop</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\libethash\ethash.vcxproj">
+      <Project>{652B5D97-2680-3AFF-82C8-227E5EB646F2}</Project>
+      <Name>ethash</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\src\3rdparty\hwloc\hwloc.vcxproj">
+      <Project>{520D53E9-11AA-3A01-B95A-04C6137ECE07}</Project>
+      <Name>hwloc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\Downloads\xmrig-master\build\xmrig-asm.vcxproj">
+      <Project>{2BA3BF50-DC00-35C0-8CD0-040969F325D6}</Project>
+      <Name>xmrig-asm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\3rdparty\argon2\arch\x86_64\lib\argon2-ssse3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Downloads\xmrig-master\src\3rdparty\argon2\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C6A6ECB5-6AC6-382F-AF7F-392AAA0C8857}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

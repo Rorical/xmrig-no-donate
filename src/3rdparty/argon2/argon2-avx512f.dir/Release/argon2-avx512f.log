@@ -1,0 +1,4 @@
+﻿  Building Custom Rule E:/Downloads/xmrig-master/src/3rdparty/argon2/CMakeLists.txt
+cl : 命令行 warning D9002: 忽略未知选项“/arch:AVX512F”
+  argon2-avx512f.c
+  argon2-avx512f.vcxproj -> E:\Downloads\xmrig-master\build\src\3rdparty\argon2\Release\argon2-avx512f.lib

@@ -1,0 +1,3 @@
+﻿  Building Custom Rule E:/Downloads/xmrig-master/src/3rdparty/argon2/CMakeLists.txt
+  argon2-avx2.c
+  argon2-avx2.vcxproj -> E:\Downloads\xmrig-master\build\src\3rdparty\argon2\Release\argon2-avx2.lib

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\ethash_internal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\keccakf800.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\data_sizes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\endian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\ethash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\ethash_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\fnv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Downloads\xmrig-master\src\3rdparty\libethash\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4D1A4B67-0A9F-3924-B5E1-F0041DBB2E68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C6A6ECB5-6AC6-382F-AF7F-392AAA0C8857}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
